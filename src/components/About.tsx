@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-// Set this to the portrait's path in /public once Belfa sends it, e.g. "/belfa.jpg".
-const PORTRAIT: string | null = null;
+// Belfa's own studio photo, cropped chest-up and set in black and white (see CREDITS.md).
+const PORTRAIT: string | null = "/belfa.jpg";
 
 export function About() {
   return (
