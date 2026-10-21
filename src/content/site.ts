@@ -15,9 +15,9 @@ export const certifications = [
   },
   {
     name: "AI Cybersecurity and Governance",
-    issuer: "Columbia University",
+    issuer: "Columbia+ (Columbia University)",
     year: 2026,
-    verifyUrl: null,
+    verifyUrl: "https://badges.plus.columbia.edu/28ce31e9-13e6-4312-9c16-a58b29605a74",
   },
 ];
 
