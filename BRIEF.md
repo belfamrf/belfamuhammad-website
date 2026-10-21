@@ -7,11 +7,13 @@ Disusun: 21 Oktober 2026
 | Hal | Keputusan |
 |---|---|
 | Nama yang tampil | **Belfa Muhammad** |
-| Profesi | Web designer & developer untuk bisnis hospitality & lifestyle |
+| Profesi | **Brand & website partner** untuk bisnis hospitality |
+| Pengalaman | ±6–7 tahun digital marketing, branding, brand identity, termasuk marketing & reservasi online hospitality (ditulis jujur dan umum, tanpa nama tempat/jabatan/angka) |
+| Nilai pembeda | Marketing + brand identity + website dalam satu orang |
 | Kalimat posisi | *"Based in Indonesia, working with clients worldwide."* |
-| Target klien | Pemilik villa, boutique hotel, kafe/restoran, wellness/spa, **global & remote penuh** |
+| Target klien | Pemilik villa, boutique hotel, restoran, kafe, wellness, **global & remote penuh** |
 | Tindakan utama pengunjung | **Mengisi form kontak** (pesan masuk ke email) |
-| Layanan | Desain + bangun website (logo/branding menyusul setelah proyek 03 selesai) |
+| Layanan | Desain + bangun website, dan brand identity (pengalaman nyata, jadi bisa ditawarkan sejak awal) |
 | Harga | Ditampilkan sebagai **"Websites from $900"** |
 | Bahasa isi | Inggris |
 
