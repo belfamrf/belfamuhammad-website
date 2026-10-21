@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "@/components/Motion";
 
 // Belfa's own studio photo, cropped chest-up and set in black and white (see CREDITS.md).
 const PORTRAIT: string | null = "/belfa.jpg";
@@ -11,7 +12,8 @@ export function About() {
       className="mx-auto w-full max-w-7xl scroll-mt-8 px-4 py-20 sm:px-8 lg:py-28"
     >
       <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-8">
-        <figure className="relative mx-auto w-full max-w-[19rem] rotate-2 bg-card p-4 pb-5 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] lg:col-span-4 lg:mx-0 lg:justify-self-center">
+        <Reveal className="lg:col-span-4 lg:justify-self-center">
+        <figure className="relative mx-auto w-full max-w-[19rem] rotate-2 bg-card p-4 pb-5 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] lg:mx-0">
           <span aria-hidden className="absolute -top-3 left-1/2 h-6 w-24 -translate-x-1/2 -rotate-3 bg-signal/90" />
           <div className="relative aspect-[4/5] overflow-hidden bg-ink">
             {PORTRAIT ? (
@@ -30,12 +32,13 @@ export function About() {
           </div>
           <figcaption className="mt-4 text-sm text-ink-soft">Belfa Muhammad · Indonesia</figcaption>
         </figure>
+        </Reveal>
 
         <div className="lg:col-span-7 lg:col-start-6">
-          <h2 id="about-title" className="display text-[clamp(2.75rem,10vw,4.5rem)] text-chalk">
-            A marketer who designs
-          </h2>
-          <div className="mt-6 max-w-[60ch] space-y-5 text-lg leading-relaxed text-chalk">
+          <Reveal as="h2" className="display text-[clamp(2.75rem,10vw,4.5rem)] text-chalk">
+            <span id="about-title">A marketer who designs</span>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-6 max-w-[60ch] space-y-5 text-lg leading-relaxed text-chalk">
             <p>
               I&apos;m Belfa Muhammad Ravi Firmansyah. Before I designed websites, I spent six to
               seven years in digital marketing, branding and brand identity, including online
@@ -48,7 +51,7 @@ export function About() {
               after, and it has a job.
             </p>
             <p className="text-chalk-soft">Based in Indonesia, working with clients worldwide.</p>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

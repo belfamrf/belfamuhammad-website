@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, ArrowUpRight, LoaderCircle } from "lucide-react";
+import { Reveal } from "@/components/Motion";
 
 // Form service endpoint (e.g. Formspree), set in .env.local. Never hard-coded.
 const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
@@ -62,9 +63,11 @@ export function Contact() {
     >
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
-          <h2 id="contact-title" className="display text-[clamp(3rem,11vw,5.5rem)] text-chalk">
-            Tell me about your <span className="text-signal">business.</span>
-          </h2>
+          <Reveal as="h2" className="display text-[clamp(3rem,11vw,5.5rem)] text-chalk">
+            <span id="contact-title">
+              Tell me about your <span className="text-signal">business.</span>
+            </span>
+          </Reveal>
           <p className="mt-6 max-w-[38ch] text-lg leading-relaxed text-chalk">
             Who your customers are, what you sell, and what you want your website to do. I reply
             within two working days.

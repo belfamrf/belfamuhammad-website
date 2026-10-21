@@ -64,6 +64,17 @@ export function Desk() {
   const drag = useRef<{ index: number; startX: number; startY: number; base: Offset; moved: boolean } | null>(null);
   const suppressClick = useRef(false);
 
+  // The cards drop onto the desk once, one after another, when the page opens.
+  const [drop, setDrop] = useState<"held" | "falling" | "rest">("held");
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setDrop("falling"));
+    const settle = setTimeout(() => setDrop("rest"), 1600);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(settle);
+    };
+  }, []);
+
   const flip = (index: number) =>
     setFlipped((prev) => prev.map((value, i) => (i === index ? !value : value)));
 
@@ -131,6 +142,9 @@ export function Desk() {
             : { x: depth * 12, y: depth * 10, r: depth === 0 ? -3 : depth * 5 - 1 };
           const offset = offsets[index];
           const isTop = depth === 0;
+          // Held cards wait above the viewport; the bottom of the pile lands first.
+          const lift = drop === "held" ? -900 : 0;
+          const spin = drop === "held" ? rest.r * 4 : rest.r;
           return (
             <div
               key={project.slug}
@@ -138,7 +152,10 @@ export function Desk() {
               data-dragging={dragging === index}
               style={{
                 zIndex: projects.length - depth,
-                transform: `translate(${rest.x + offset.x}px, ${rest.y + offset.y}px) rotate(${rest.r}deg) scale(${scale})`,
+                transform: `translate(${rest.x + offset.x}px, ${rest.y + offset.y + lift}px) rotate(${spin}deg) scale(${scale})`,
+                transitionDuration: drop === "falling" ? "1000ms" : undefined,
+                transitionDelay:
+                  drop === "falling" ? `${(projects.length - 1 - depth) * 160 + 150}ms` : undefined,
               }}
             >
               <div className="card-3d h-full w-full">

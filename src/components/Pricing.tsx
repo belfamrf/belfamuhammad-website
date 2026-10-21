@@ -1,8 +1,14 @@
+"use client";
+
+import { motion } from "motion/react";
+import { Reveal } from "@/components/Motion";
+
 const tags = [
   {
     name: "Website",
     price: "$900",
-    rotate: "lg:-rotate-2",
+    rotate: -2,
+    offset: "",
     includes: [
       "Custom design, no templates",
       "Built mobile-first",
@@ -14,7 +20,8 @@ const tags = [
   {
     name: "Brand identity",
     price: "$600",
-    rotate: "lg:rotate-2 lg:mt-12",
+    rotate: 2,
+    offset: "lg:mt-12",
     includes: [
       "Logo and its variations",
       "Colour palette and typefaces",
@@ -32,19 +39,28 @@ export function Pricing() {
     >
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-4">
-          <h2 id="pricing-title" className="display text-[clamp(2.75rem,10vw,4.5rem)] text-chalk">
-            Clear prices, up front
-          </h2>
-          <p className="mt-5 max-w-[36ch] text-lg leading-relaxed text-chalk-soft">
+          <Reveal as="h2" className="display text-[clamp(2.75rem,10vw,4.5rem)] text-chalk">
+            <span id="pricing-title">Clear prices, up front</span>
+          </Reveal>
+          <Reveal as="p" delay={0.1} className="mt-5 max-w-[36ch] text-lg leading-relaxed text-chalk-soft">
             Starting prices, so you know where you stand before we talk. Need both? Ask about a
             brand + website package.
-          </p>
+          </Reveal>
         </div>
         <div className="grid gap-10 sm:grid-cols-2 sm:gap-6 lg:col-span-8">
-          {tags.map((tag) => (
-            <article
+          {tags.map((tag, i) => (
+            // Swing tags: they hang from the punched hole and settle with a small sway.
+            <motion.article
               key={tag.name}
-              className={`relative bg-card px-6 pb-8 pt-12 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] ${tag.rotate}`}
+              initial={{ rotate: tag.rotate * 7, y: -24, opacity: 0 }}
+              whileInView={{ rotate: tag.rotate, y: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+              transition={{
+                rotate: { type: "spring", stiffness: 90, damping: 7, delay: i * 0.15 },
+                default: { duration: 0.6, delay: i * 0.15 },
+              }}
+              style={{ transformOrigin: "50% 1.5rem" }}
+              className={`relative bg-card px-6 pb-8 pt-12 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] ${tag.offset}`}
             >
               {/* punched hole of a swing tag */}
               <span
@@ -64,7 +80,7 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
