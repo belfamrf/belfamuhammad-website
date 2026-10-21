@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T14:29:18.143Z",
+  "title": "Design System: Belfa Muhammad",
+  "extensions": {
+    "colorMeta": {
+      "signal": {
+        "role": "primary",
+        "displayName": "Signal Orange",
+        "canonical": "oklch(68.3% 0.210 38.0)",
+        "tonalRamp": [
+          "#280000",
+          "#590000",
+          "#890000",
+          "#b50000",
+          "#dd4300",
+          "#f97a53",
+          "#ffb298",
+          "#ffe6db"
+        ]
+      },
+      "signal-ink": {
+        "role": "primary",
+        "displayName": "Signal Ink",
+        "canonical": "oklch(54.0% 0.183 32.1)",
+        "tonalRamp": [
+          "#290000",
+          "#5a0000",
+          "#870000",
+          "#ad1b00",
+          "#d74931",
+          "#fa7860",
+          "#ffb19f",
+          "#ffe5dd"
+        ]
+      },
+      "desk": {
+        "role": "neutral",
+        "displayName": "Desk Charcoal",
+        "canonical": "oklch(22.2% 0.004 84.6)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252422",
+          "#41403d",
+          "#5f5d5b",
+          "#81807d",
+          "#a6a4a2",
+          "#cccac7",
+          "#f0eeeb"
+        ]
+      },
+      "desk-raised": {
+        "role": "neutral",
+        "displayName": "Raised Desk",
+        "canonical": "oklch(26.4% 0.006 91.6)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252421",
+          "#41403c",
+          "#5f5d5a",
+          "#81807c",
+          "#a6a4a1",
+          "#cccac6",
+          "#f0eeea"
+        ],
+        "note": "Defined in tokens; not used visibly in the shipped page."
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card Stock",
+        "canonical": "oklch(95.5% 0.007 88.6)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#252420",
+          "#41403c",
+          "#5f5d59",
+          "#82807c",
+          "#a6a4a0",
+          "#cccac5",
+          "#f0eee9"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(19.1% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(39.9% 0.012 87.5)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#26241d",
+          "#423f39",
+          "#605d56",
+          "#838078",
+          "#a8a49c",
+          "#cecac2",
+          "#f2eee5"
+        ]
+      },
+      "chalk": {
+        "role": "neutral",
+        "displayName": "Chalk",
+        "canonical": "oklch(94.4% 0.009 84.6)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#26241f",
+          "#423f3b",
+          "#605d58",
+          "#83807a",
+          "#a7a49f",
+          "#cdcac4",
+          "#f1eee8"
+        ]
+      },
+      "chalk-soft": {
+        "role": "neutral",
+        "displayName": "Soft Chalk",
+        "canonical": "oklch(77.1% 0.015 84.6)",
+        "tonalRamp": [
+          "#0e0b05",
+          "#27241c",
+          "#433f37",
+          "#625d54",
+          "#848076",
+          "#a9a49a",
+          "#cfcac0",
+          "#f3eee3"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; the contact headline uses clamp(3rem, 11vw, 5.5rem). Uppercase, font-stretch 68%, word-spacing 0.1em, balanced wrap."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings written on the desk."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Display caps used small on card stock: step names, 'The brief', card cover goal (2.1rem), prices (4.5rem)."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Paragraph under each heading, 34 to 38ch; About prose to 60ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Step text (56ch max), lists, terms."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, form labels, flip marks, card-cover status lines."
+      },
+      "data-label": {
+        "displayName": "Data Label",
+        "purpose": "Only the term labels of the brief on a project card's back."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper-rest",
+        "value": "0 2px 3px rgb(0 0 0 / 0.35), 0 18px 30px -8px rgb(0 0 0 / 0.55)",
+        "purpose": "Project cards lying on the desk."
+      },
+      {
+        "name": "paper-sheet",
+        "value": "0 2px 3px rgb(0 0 0 / 0.35), 0 24px 40px -12px rgb(0 0 0 / 0.55)",
+        "purpose": "Process sheet, price tags, AI panel, polaroid, form."
+      },
+      {
+        "name": "paper-lifted",
+        "value": "0 4px 6px rgb(0 0 0 / 0.3), 0 34px 50px -10px rgb(0 0 0 / 0.6)",
+        "purpose": "A project card while it is dragged."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-house",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The one easing for the site: fast start, long soft landing. Default motion duration 0.8s."
+      },
+      {
+        "name": "card-flip",
+        "value": "transform 500ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "3D flip of a project card (perspective 1400px); instant face swap under reduced motion."
+      },
+      {
+        "name": "card-settle",
+        "value": "transform 600ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Cards returning to rest; the first-load drop runs 1000ms, staggered 160ms."
+      },
+      {
+        "name": "tag-sway",
+        "value": "spring stiffness 90, damping 7",
+        "purpose": "Price swing tags settling from the punched hole on scroll-in."
+      },
+      {
+        "name": "stamp",
+        "value": "spring stiffness 420, damping 22; scale 1.6 to 1, rotate -10deg to 0",
+        "purpose": "Process step numbers landing like a rubber stamp."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": "Lenis lerp 0.11",
+        "purpose": "Smooth wheel scrolling; off under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "textures": [
+      {
+        "name": "desk-grain",
+        "value": "SVG fractalNoise, baseFrequency 0.9, 2 octaves, white at 5% alpha, 160px tile",
+        "purpose": "Faint grain on the desk ground only."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Orange block for the main action; on the desk it hovers to chalk.",
+      "html": "<div class=\"ds-desk\"><a class=\"ds-btn-primary\" href=\"#contact\">Start a project</a></div>",
+      "css": ".ds-desk{background:var(--desk,#1c1b19);padding:24px}.ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:var(--signal,#ff5b1f);color:var(--ink,#141414);font-family:Archivo,sans-serif;font-weight:600;font-size:1rem;text-decoration:none;border:0;border-radius:0;transition:background-color 150ms cubic-bezier(0.16,1,0.3,1),color 150ms}.ds-btn-primary:hover{background:var(--chalk,#efece6)}.ds-btn-primary:focus-visible{outline:3px solid var(--signal,#ff5b1f);outline-offset:3px}"
+    },
+    {
+      "name": "Primary Button on Card",
+      "kind": "button",
+      "refersTo": "button-primary-on-card-hover",
+      "description": "Form submit on card stock; hovers to ink with chalk text.",
+      "html": "<div class=\"ds-paper\"><button class=\"ds-btn-submit\">Send message <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button></div>",
+      "css": ".ds-paper{background:var(--card,#f2f0eb);padding:24px}.ds-btn-submit{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 24px;background:var(--signal,#ff5b1f);color:var(--ink,#141414);font-family:Archivo,sans-serif;font-weight:600;font-size:1rem;border:0;border-radius:0;cursor:pointer;transition:background-color 150ms,color 150ms}.ds-btn-submit:hover{background:var(--ink,#141414);color:var(--chalk,#efece6)}.ds-btn-submit:focus-visible{outline:3px solid var(--signal,#ff5b1f);outline-offset:3px}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary control on the desk (Next card).",
+      "html": "<div class=\"ds-desk\"><button class=\"ds-btn-outline\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m18 14 4 4-4 4\"/><path d=\"m18 2 4 4-4 4\"/><path d=\"M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22\"/><path d=\"M2 6h1.972a4 4 0 0 1 3.6 2.2\"/><path d=\"M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45\"/></svg>Next card</button></div>",
+      "css": ".ds-desk{background:var(--desk,#1c1b19);padding:24px}.ds-btn-outline{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;background:transparent;color:var(--chalk,#efece6);border:1px solid rgb(185 180 170 / 0.4);border-radius:0;font-family:Archivo,sans-serif;font-weight:600;font-size:0.875rem;cursor:pointer;transition:color 150ms,border-color 150ms}.ds-btn-outline:hover{color:var(--signal,#ff5b1f);border-color:var(--signal,#ff5b1f)}.ds-btn-outline:focus-visible{outline:3px solid var(--signal,#ff5b1f);outline-offset:3px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Square field on card stock with its label above.",
+      "html": "<div class=\"ds-field-wrap\"><label class=\"ds-label\" for=\"ds-email\">Email</label><input class=\"ds-input\" id=\"ds-email\" type=\"email\"></div>",
+      "css": ".ds-field-wrap{background:var(--card,#f2f0eb);padding:24px;color:var(--ink,#141414);font-family:Archivo,sans-serif}.ds-label{font-size:0.875rem;font-weight:600}.ds-input{margin-top:8px;display:block;width:100%;padding:12px;font-size:1rem;color:var(--ink,#141414);background:rgb(255 255 255 / 0.6);border:1px solid rgb(20 20 20 / 0.25);border-radius:0;caret-color:var(--signal-ink,#c2341c)}.ds-input:focus{border-color:var(--ink,#141414);outline:none}.ds-input:focus-visible{outline:3px solid var(--signal,#ff5b1f);outline-offset:1px}.ds-input[aria-invalid=true]{border-color:var(--signal-ink,#c2341c)}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "button-header",
+      "description": "Name left, section links in soft chalk, the orange action at right.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-name\" href=\"/\">Belfa Muhammad</a><nav class=\"ds-nav-right\"><a class=\"ds-nav-link\" href=\"#work\">Work</a><a class=\"ds-nav-link\" href=\"#process\">Process</a><a class=\"ds-nav-link\" href=\"#pricing\">Pricing</a><a class=\"ds-nav-link\" href=\"#about\">About</a><a class=\"ds-nav-cta\" href=\"#contact\">Start a project</a></nav></header>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 32px;background:var(--desk,#1c1b19);font-family:Archivo,sans-serif}.ds-nav-name{font-size:1.125rem;font-weight:600;letter-spacing:-0.025em;color:var(--chalk,#efece6);text-decoration:none}.ds-nav-right{display:flex;align-items:center;gap:4px}.ds-nav-link{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;font-size:0.875rem;font-weight:500;color:var(--chalk-soft,#b9b4aa);text-decoration:none}.ds-nav-link:hover{color:var(--chalk,#efece6)}.ds-nav-cta{margin-left:12px;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:var(--signal,#ff5b1f);color:var(--ink,#141414);font-size:0.875rem;font-weight:600;text-decoration:none}.ds-nav-cta:hover{background:var(--chalk,#efece6)}.ds-nav a:focus-visible{outline:3px solid var(--signal,#ff5b1f);outline-offset:3px}"
+    },
+    {
+      "name": "Card Sheet",
+      "kind": "card",
+      "refersTo": "card-sheet",
+      "description": "Card stock on the desk with a paper shadow and a tape strip.",
+      "html": "<div class=\"ds-desk-pad\"><div class=\"ds-sheet\"><span class=\"ds-tape\"></span><h3 class=\"ds-sheet-title\">AI built in, if you want it</h3><p class=\"ds-sheet-text\">Added to your website and priced with the project.</p></div></div>",
+      "css": ".ds-desk-pad{background:var(--desk,#1c1b19);padding:40px 24px}.ds-sheet{position:relative;background:var(--card,#f2f0eb);color:var(--ink,#141414);padding:28px 24px;border-radius:0;font-family:Archivo,sans-serif;box-shadow:0 2px 3px rgb(0 0 0 / 0.35), 0 24px 40px -12px rgb(0 0 0 / 0.55)}.ds-tape{position:absolute;top:-12px;right:40px;width:96px;height:24px;background:rgb(255 91 31 / 0.9);transform:rotate(-2deg)}.ds-sheet-title{margin:0;font-size:1.125rem;font-weight:600}.ds-sheet-text{margin:4px 0 0;color:var(--ink-soft,#4a4740)}"
+    },
+    {
+      "name": "Project Card",
+      "kind": "custom",
+      "refersTo": "project-card",
+      "description": "Signature: a tilted printed card with tape that flips to its marketing brief.",
+      "html": "<div class=\"ds-desk-wide\"><div class=\"ds-pcard\" tabindex=\"0\"><span class=\"ds-ptape\"></span><div class=\"ds-pcover\"><p class=\"ds-pstatus\">Concept project<br>In progress<br>Renovation contractor</p><p class=\"ds-pgoal\">Win bigger renovation jobs.</p></div><p class=\"ds-pflip\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8\"/><path d=\"M21 3v5h-5\"/></svg>Flip for the brief</p></div></div>",
+      "css": ".ds-desk-wide{background:var(--desk,#1c1b19);padding:48px}.ds-pcard{position:relative;width:272px;height:352px;display:flex;flex-direction:column;background:var(--card,#f2f0eb);color:var(--ink,#141414);padding:16px;font-family:Archivo,sans-serif;transform:rotate(-3deg);box-shadow:0 2px 3px rgb(0 0 0 / 0.35), 0 18px 30px -8px rgb(0 0 0 / 0.55);transition:transform 600ms cubic-bezier(0.16,1,0.3,1),box-shadow 300ms ease-out;cursor:pointer}.ds-pcard:hover{box-shadow:0 4px 6px rgb(0 0 0 / 0.3), 0 34px 50px -10px rgb(0 0 0 / 0.6)}.ds-pcard:focus-visible{outline:3px solid var(--signal,#ff5b1f);outline-offset:3px}.ds-ptape{position:absolute;top:-12px;left:50%;width:96px;height:24px;margin-left:-48px;background:rgb(255 91 31 / 0.9);transform:rotate(-2deg)}.ds-pcover{flex:1;display:flex;flex-direction:column;justify-content:space-between;background:var(--ink,#141414);color:var(--chalk,#efece6);padding:16px}.ds-pstatus{margin:0;font-size:0.875rem;line-height:1.375;color:var(--chalk-soft,#b9b4aa)}.ds-pgoal{margin:0;font-size:2.1rem;font-weight:850;font-stretch:68%;text-transform:uppercase;line-height:0.92;letter-spacing:-0.01em;word-spacing:0.1em}.ds-pflip{margin:0;padding-top:16px;display:inline-flex;align-items:center;gap:6px;font-size:0.875rem;font-weight:600;color:var(--signal-ink,#c2341c)}"
+    },
+    {
+      "name": "Swing Tag",
+      "kind": "card",
+      "refersTo": "card-sheet",
+      "description": "Price card hanging from a punched hole.",
+      "html": "<div class=\"ds-desk-tag\"><article class=\"ds-tag\"><span class=\"ds-hole\"></span><h3 class=\"ds-tag-name\">Website</h3><p class=\"ds-tag-price\"><span class=\"ds-tag-from\">from</span><span class=\"ds-tag-amt\">$900</span></p></article></div>",
+      "css": ".ds-desk-tag{background:var(--desk,#1c1b19);padding:40px}.ds-tag{position:relative;max-width:300px;background:var(--card,#f2f0eb);color:var(--ink,#141414);padding:48px 24px 32px;font-family:Archivo,sans-serif;transform:rotate(-1.5deg);transform-origin:50% 1.5rem;box-shadow:0 2px 3px rgb(0 0 0 / 0.35), 0 24px 40px -12px rgb(0 0 0 / 0.55)}.ds-hole{position:absolute;left:50%;top:16px;width:16px;height:16px;margin-left:-8px;border-radius:9999px;background:var(--desk,#1c1b19);box-shadow:0 0 0 2px rgb(20 20 20 / 0.2)}.ds-tag-name{margin:0;font-size:1.125rem;font-weight:600}.ds-tag-price{margin:8px 0 0;display:flex;align-items:baseline;gap:8px}.ds-tag-from{font-size:0.875rem;color:var(--ink-soft,#4a4740)}.ds-tag-amt{font-size:4.5rem;font-weight:850;font-stretch:68%;text-transform:uppercase;line-height:0.92;letter-spacing:-0.01em;word-spacing:0.1em}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Marketer's Work Desk",
+    "overview": "The page is a charcoal desk seen from above. Everything that carries content is a physical object lying on it: printed project cards, a single sheet of process notes, swing tags for prices, a polaroid of Belfa, a form on card stock. Each object is off-white stock in black ink, held down by a strip of orange tape, lifted off the desk by a real paper shadow, and often tilted a few degrees. Between the objects, the desk itself carries the voice: huge condensed caps in chalk, and short readable prose.\n\nThe world is quiet and dark with one loud material. Signal orange is tape, the primary action and one key word per headline; it is never a fill for panels or a decorative gradient. Density is low: one idea per section, a heading column on the left and the object on the right on wide screens, stacked on phones.\n\nThe signature is the project card that flips: front shows the project, back shows the marketing brief behind it. Motion follows one grammar, a fast start and a long soft landing, and every movement steps aside for reduced motion.",
+    "keyCharacteristics": [
+      "Charcoal desk with faint grain; off-white card stock in ink as the only surface for content blocks.",
+      "One accent (signal orange), deepened to signal-ink when it has to read as text on card stock.",
+      "One type family, Archivo: condensed heavy caps for display, normal width for everything else.",
+      "Square corners, real soft paper shadows, slight rotation, orange tape.",
+      "One easing curve for the whole site: cubic-bezier(0.16, 1, 0.3, 1)."
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "Orange is the only accent. It appears as tape, the primary action, focus, and one key word per display headline at most; never as a panel fill, gradient, or second-tier highlight.",
+        "section": "colors"
+      },
+      {
+        "name": "The Deepen-On-Paper Rule",
+        "body": "When signal orange becomes text on card stock it switches to signal-ink. Bright signal is for the desk and for fills.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink On Paper, Chalk On Desk Rule",
+        "body": "Card stock carries ink and soft ink; the desk carries chalk and soft chalk. Text never crosses grounds with the wrong pair.",
+        "section": "colors"
+      },
+      {
+        "name": "The Condensed-Caps Rule",
+        "body": "Display type is always uppercase Archivo at 68% width, weight 850, line-height 0.92, letter-spacing -0.01em, word-spacing 0.1em, balanced wrap. It is never set at normal width and never used for running text.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Key Word Rule",
+        "body": "A display headline may color its final key word signal orange; the rest stays chalk. Shipped on the hero (\"MARKETER.\") and contact (\"BUSINESS.\") only.",
+        "section": "typography"
+      },
+      {
+        "name": "The Real Paper Rule",
+        "body": "Shadows are soft and diffuse, always a contact layer plus a blurred drop. No hard offset shadows, no glow, no glass.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do put every content block that is not a heading or lead paragraph on card stock with a paper shadow and a tape strip or punched hole.",
+      "Do use cubic-bezier(0.16, 1, 0.3, 1) for transitions and honor prefers-reduced-motion by removing rotation, drops and smooth scroll.",
+      "Do switch signal to signal-ink when orange text sits on card stock.",
+      "Do tilt objects a few degrees (within about -7 to +4) so the desk feels handled, not gridded.",
+      "Do keep tap targets at 44px or more and focus visible as the 3px signal outline."
+    ],
+    "donts": [
+      "Don't use gradients, glass or blur panels, or icon tiles.",
+      "Don't round corners on cards, buttons, fields or tape; the punched hole is the only circle.",
+      "Don't use hard offset shadows; paper shadows are soft.",
+      "Don't add a second accent color or use orange as a panel background.",
+      "Don't set running text in the condensed display cut, or display headings at normal width.",
+      "Don't introduce a second typeface."
+    ]
+  }
+}

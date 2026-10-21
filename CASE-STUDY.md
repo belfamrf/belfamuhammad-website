@@ -21,7 +21,7 @@ I needed a site that wins remote clients, mostly small-business owners comparing
 | Charcoal desk, card stock, one signal orange | One accent keeps the eye on the action; the paper texture makes the desk feel real |
 | Archivo in condensed caps for headlines, normal width for text | One type family; hierarchy comes from size, not from a pile of fonts |
 | Flip cards with the brief on the back | Shows the marketing thinking in a few seconds instead of a paragraph about it |
-| Cards drop onto the desk, steps land like stamps, price tags swing | Motion that belongs to the desk world, kept light so the site stays fast |
+| Cards drop onto the desk, steps land like stamps, price tags swing | Motion that belongs to the desk world. Text never waits on an animation to appear, so the page reads even before scripts load |
 | Prices and terms shown up front | Upwork buyers judge on risk; clear terms remove a reason to wait |
 | Contact form as the single main action | One clear next step on every section |
 
@@ -29,6 +29,7 @@ I needed a site that wins remote clients, mostly small-business owners comparing
 
 - Screenshots at phone, tablet and laptop widths, reviewed and fixed
 - Impeccable audit and critique; detector scan clean
+- An independent finish review against the design contract; its fixes were applied until it signed off
 - All copy edited with a no-AI-slop pass
 - Reduced-motion mode tested: no falling cards, no smooth scrolling
 - WCAG AA contrast; keyboard skip link; labelled form with clear errors
@@ -36,7 +37,7 @@ I needed a site that wins remote clients, mostly small-business owners comparing
 
 ## Results
 
-- Lighthouse on the production build: **96 / 100 / 100 / 100** on mobile and **100 / 100 / 100 / 100** on desktop (Performance, Accessibility, Best Practices, SEO)
+- Lighthouse on the live site: **98 / 100 / 100 / 100** on mobile and **100 / 100 / 100 / 100** on desktop (Performance, Accessibility, Best Practices, SEO)
 - Live on its own domain with HTTPS, contact form delivering to email
 
 Enquiry numbers will go here once the site has been live long enough to measure them.
