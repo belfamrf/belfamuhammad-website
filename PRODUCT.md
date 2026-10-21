@@ -30,6 +30,8 @@ A web designer with a marketer's head. Websites that look premium and get visito
 - Fonts from Google Fonts, icons from Lucide, motion subtle and respectful of `prefers-reduced-motion`.
 - SEO basics on every page (metadata, Open Graph image, sitemap, structured data). Ready for Google Analytics through an environment variable; no real ID in the code.
 - Pricing shown as "Websites from $900" and "Brand identity from $600". Brand + website packages are discussed by email.
+- Terms Belfa confirmed for the site: websites usually take 2–3 weeks; two rounds of revisions per stage; 50% to start, 50% at launch; the client owns the website and all files once paid; replies within two working days.
+- No Upwork profile yet; LinkedIn is the only outside profile link.
 - Contact form delivers to belfamrf39@gmail.com.
 - Profile link: LinkedIn (https://www.linkedin.com/in/belfa-muhammad-ravi-firmansyah-103387225/).
 - Domain: belfamuhammad.com.

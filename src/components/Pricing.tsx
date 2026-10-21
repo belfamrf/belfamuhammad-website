@@ -30,6 +30,13 @@ const tags = [
   },
 ];
 
+const terms = [
+  ["Timeline", "Most websites take 2–3 weeks."],
+  ["Revisions", "Two rounds of revisions at each stage."],
+  ["Payment", "50% to start, 50% when your site goes live."],
+  ["Ownership", "Once it's paid, the website and every file are yours."],
+];
+
 export function Pricing() {
   return (
     <section
@@ -82,6 +89,17 @@ export function Pricing() {
               </ul>
             </motion.article>
           ))}
+          {/* The answers a buyer weighs before they risk a deposit. */}
+          <Reveal className="sm:col-span-2">
+            <dl className="grid gap-x-10 gap-y-5 border-t border-chalk-soft/25 pt-8 sm:grid-cols-2">
+              {terms.map(([label, text]) => (
+                <div key={label}>
+                  <dt className="text-sm font-semibold uppercase tracking-wider text-signal">{label}</dt>
+                  <dd className="mt-1 leading-relaxed text-chalk">{text}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
           <a
             href="#contact"
             className="inline-flex min-h-12 items-center justify-center gap-2 justify-self-start bg-signal px-6 font-semibold text-ink transition-colors hover:bg-chalk sm:col-span-2"
