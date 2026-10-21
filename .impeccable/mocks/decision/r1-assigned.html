@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=390">
+<title>Shop window sketch</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700;6..96,900&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0}
+  body{width:390px;height:844px;overflow:hidden;background:#0F1115;font-family:'Hanken Grotesk',sans-serif;color:#F4F4F2;position:relative}
+  nav{position:absolute;top:0;left:0;right:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:14px;font-weight:600;letter-spacing:.04em}
+  .glass{position:absolute;left:14px;right:14px;top:52px;bottom:118px;background:#2B3FD6;border:6px solid #1B1E26;overflow:hidden}
+  .glass::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,#ffffff1f 38%,transparent 46%);pointer-events:none}
+  .sign{position:absolute;left:16px;right:16px;top:26px;font-family:'Bodoni Moda',serif;color:#D4AF37;text-shadow:2px 2px 0 #0F1115}
+  .sign .name{font-size:46px;font-weight:900;line-height:.95}
+  .sign .line{margin-top:14px;font-size:27px;font-weight:700;line-height:1.08}
+  .plinths{position:absolute;left:16px;right:16px;bottom:0;height:250px;display:flex;align-items:flex-end;gap:10px}
+  .p{flex:1;background:#F4F4F2;position:relative}
+  .p .item{position:absolute;left:8px;right:8px;bottom:100%;margin-bottom:8px;background:#0F1115;border:3px solid #F4F4F2}
+  .tag{position:absolute;right:-4px;top:-30px;background:#F4F4F2;color:#0F1115;font-size:11px;font-weight:600;padding:5px 8px;transform:rotate(6deg)}
+  .note{position:absolute;left:16px;right:16px;top:300px;font-size:16px;line-height:1.45;color:#FFFFFF}
+  .door{position:absolute;left:14px;right:14px;bottom:28px;height:68px;background:#D4AF37;color:#0F1115;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-weight:600;font-size:18px;border:3px solid #0F1115;outline:2px solid #D4AF37}
+  .door b{font-family:'Bodoni Moda',serif;font-size:24px}
+</style></head><body>
+<nav><span>Belfa Muhammad</span><span>Work · Process · Pricing</span></nav>
+<div class="glass">
+  <div class="sign"><div class="name">Belfa Muhammad</div><div class="line">Premium websites, designed by a marketer.</div></div>
+  <p class="note">Websites that make visitors book, buy or get in touch. Based in Indonesia, working with clients worldwide.</p>
+  <div class="plinths">
+    <div class="p" style="height:70px"><div class="item" style="height:110px"></div><span class="tag">01 · concept</span></div>
+    <div class="p" style="height:95px"><div class="item" style="height:120px"></div><span class="tag">02 · concept</span></div>
+    <div class="p" style="height:55px"><div class="item" style="height:100px"></div><span class="tag">03 · concept</span></div>
+  </div>
+</div>
+<a class="door"><b>Open</b><span>Start a project →</span></a>
+</body></html>

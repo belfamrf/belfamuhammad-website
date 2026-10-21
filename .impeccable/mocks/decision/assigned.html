@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=390">
+<title>Floor plan sketch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0}
+  body{width:390px;height:844px;overflow:hidden;background:#12352B;color:#E8EFE6;font-family:Archivo,sans-serif;position:relative}
+  .grid{position:absolute;inset:0;background-image:linear-gradient(#E8EFE61a 1px,transparent 1px),linear-gradient(90deg,#E8EFE61a 1px,transparent 1px);background-size:26px 26px}
+  nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:18px 16px;font-stretch:80%;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+  svg.plan{position:absolute;left:0;top:56px;width:390px;height:520px}
+  h1{position:absolute;left:16px;right:16px;top:330px;font-stretch:118%;font-weight:850;font-size:40px;line-height:.98;letter-spacing:-.01em}
+  h1 em{font-style:normal;color:#E2452B}
+  .lede{position:absolute;left:16px;right:60px;top:610px;font-size:16px;line-height:1.45;color:#E8EFE6cc}
+  .desk{position:absolute;left:16px;right:16px;bottom:28px;height:64px;border:2px solid #C2341C;background:#C2341C;color:#FFF8F2;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-stretch:110%;font-weight:800;font-size:22px}
+  .desk small{font-size:12px;font-stretch:80%;letter-spacing:.1em;text-transform:uppercase}
+  .tag{position:absolute;right:16px;top:584px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#C9D6CC}
+</style></head><body>
+<div class="grid"></div>
+<nav><span>Belfa Muhammad</span><span>Work · Process · Contact</span></nav>
+<svg class="plan" viewBox="0 0 390 520" fill="none" stroke="#E8EFE6" stroke-width="2">
+  <!-- outer walls -->
+  <path d="M8 8 H382 V250 H8 Z"/>
+  <!-- rooms row -->
+  <path d="M8 110 H382 M102 8 V110 M196 8 V110 M290 8 V110"/>
+  <path d="M40 110 a22 22 0 0 1 22 -22" stroke-dasharray="3 3"/>
+  <path d="M134 110 a22 22 0 0 1 22 -22" stroke-dasharray="3 3"/>
+  <path d="M228 110 a22 22 0 0 1 22 -22" stroke-dasharray="3 3"/>
+  <path d="M322 110 a22 22 0 0 1 22 -22" stroke-dasharray="3 3"/>
+  <!-- booked rooms: grease pencil -->
+  <g stroke="#E2452B" stroke-width="5" stroke-linecap="round">
+    <path d="M24 26 L86 92 M86 26 L24 92"/>
+    <path d="M212 26 L274 92 M274 26 L212 92"/>
+    <path d="M306 26 L368 92 M368 26 L306 92"/>
+  </g>
+  <!-- tables -->
+  <g>
+    <circle cx="48" cy="160" r="16"/><circle cx="112" cy="160" r="16"/><circle cx="176" cy="160" r="16"/>
+    <circle cx="240" cy="160" r="16"/><circle cx="304" cy="160" r="16"/><circle cx="356" cy="160" r="12"/>
+  </g>
+  <g fill="#E2452B" stroke="none">
+    <circle cx="48" cy="160" r="11"/><circle cx="176" cy="160" r="11"/><circle cx="240" cy="160" r="11"/><circle cx="304" cy="160" r="11"/>
+  </g>
+  <g font-family="Archivo" font-size="11" fill="#E8EFE6" stroke="none" letter-spacing="1.2">
+    <text x="16" y="22">101</text><text x="110" y="22">102</text><text x="204" y="22">103</text><text x="298" y="22">104</text>
+  </g>
+  <path d="M8 250 V520 M382 250 V520" stroke-opacity=".35"/>
+</svg>
+<h1>Websites and brands that fill <em>rooms</em> and <em>tables</em>.</h1>
+<p class="tag">Illustration · not real data</p>
+<p class="lede">Brand &amp; website partner for villas, boutique hotels and restaurants. Based in Indonesia, working with clients worldwide.</p>
+<a class="desk"><span>Start a project</span><small>Front desk →</small></a>
+</body></html>
