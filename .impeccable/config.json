@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-10-21T11:22:02.616Z",
         "reason": "Direction contract FIRST VIEWPORT (src-app-page-tsx.md) sets the hero headline as the display thesis; 87px stays under the 6rem cap"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/*.html"
+        ],
+        "createdAt": "2026-10-21T14:34:12.706Z",
+        "reason": "Decision-round sketches of unchosen directions, each in its own fonts by design; not shipped and exempt from DESIGN.md"
       }
     ]
   }
