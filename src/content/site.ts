@@ -6,6 +6,21 @@ export const SITE_TITLE = "Belfa Muhammad · Premium websites, designed by a mar
 export const SITE_DESCRIPTION =
   "Web designer with 6–7 years in marketing and branding. Websites that look premium and get people to book, buy or get in touch. Based in Indonesia, working with clients worldwide.";
 
+export const certifications = [
+  {
+    name: "AI Leadership",
+    issuer: "OpenAI Academy",
+    year: 2026,
+    verifyUrl: "https://oaiacademy.credential.net/36d5493f-600f-4d14-a852-d02bbe533b48",
+  },
+  {
+    name: "AI Cybersecurity and Governance",
+    issuer: "Columbia University",
+    year: 2026,
+    verifyUrl: null,
+  },
+];
+
 // schema.org data for search engines: who Belfa is and what is offered.
 export const structuredData = {
   "@context": "https://schema.org",
@@ -19,6 +34,13 @@ export const structuredData = {
       url: SITE_URL,
       image: `${SITE_URL}/belfa.jpg`,
       sameAs: [LINKEDIN_URL],
+      hasCredential: certifications.map((cert) => ({
+        "@type": "EducationalOccupationalCredential",
+        name: cert.name,
+        credentialCategory: "certificate",
+        recognizedBy: { "@type": "Organization", name: cert.issuer },
+        ...(cert.verifyUrl ? { url: cert.verifyUrl } : {}),
+      })),
       address: { "@type": "PostalAddress", addressCountry: "ID" },
     },
     {

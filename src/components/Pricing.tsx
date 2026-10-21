@@ -30,6 +30,13 @@ const tags = [
   },
 ];
 
+const aiExtras = [
+  "A chat assistant that answers visitors' questions and points them to book or get in touch",
+  "Automatic follow-up when someone fills in your form",
+  "Help planning and scheduling social media content",
+  "Small custom tools for your business, like a price calculator",
+];
+
 const terms = [
   ["Timeline", "Most websites take 2–3 weeks."],
   ["Revisions", "Two rounds of revisions at each stage."],
@@ -89,6 +96,22 @@ export function Pricing() {
               </ul>
             </motion.article>
           ))}
+          {/* AI is offered inside the website work, not as a separate service. */}
+          <Reveal className="sm:col-span-2">
+            <div className="relative bg-card px-6 py-7 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] sm:px-8">
+              <span aria-hidden className="absolute -top-3 right-10 h-6 w-24 -rotate-2 bg-signal/90" />
+              <h3 className="text-lg font-semibold">AI built in, if you want it</h3>
+              <p className="mt-1 text-ink-soft">Added to your website and priced with the project.</p>
+              <ul className="mt-5 grid gap-x-8 gap-y-2.5 leading-snug sm:grid-cols-2">
+                {aiExtras.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span aria-hidden className="mt-2 h-0.5 w-3 shrink-0 bg-signal" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
           {/* The answers a buyer weighs before they risk a deposit. */}
           <Reveal className="sm:col-span-2">
             <dl className="grid gap-x-10 gap-y-5 border-t border-chalk-soft/25 pt-8 sm:grid-cols-2">

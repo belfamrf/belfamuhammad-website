@@ -31,7 +31,9 @@ A web designer with a marketer's head. Websites that look premium and get visito
 - SEO basics on every page (metadata, Open Graph image, sitemap, structured data). Ready for Google Analytics through an environment variable; no real ID in the code.
 - Pricing shown as "Websites from $900" and "Brand identity from $600". Brand + website packages are discussed by email.
 - Terms Belfa confirmed for the site: websites usually take 2–3 weeks; two rounds of revisions per stage; 50% to start, 50% at launch; the client owns the website and all files once paid; replies within two working days.
-- No Upwork profile yet; LinkedIn is the only outside profile link.
+- Upwork profile exists but is not optimised yet; it gets linked from the site only after optimisation. LinkedIn is the only outside profile link for now.
+- AI is offered inside the website work, priced with the project (no separate price): chat assistant on the site, automatic follow-up on form enquiries, help planning and scheduling social content, small custom tools. Belfa uses ChatGPT/Claude/Gemini, workflow automation tools, AI app builders, and AI image/video tools daily, and has built marketing automations and an app.
+- Certifications: AI Leadership, OpenAI Academy, 2026 (verified at https://oaiacademy.credential.net/36d5493f-600f-4d14-a852-d02bbe533b48); AI Cybersecurity and Governance, Columbia University, 2026 (shown on LinkedIn, no public verify link on the site).
 - Contact form delivers to belfamrf39@gmail.com.
 - Profile link: LinkedIn (https://www.linkedin.com/in/belfa-muhammad-ravi-firmansyah-103387225/).
 - Domain: belfamuhammad.com.
