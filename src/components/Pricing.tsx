@@ -7,7 +7,7 @@ const tags = [
   {
     name: "Website",
     price: "$900",
-    rotate: -2,
+    rotate: -1.5,
     offset: "",
     includes: [
       "Custom design, no templates",
@@ -20,7 +20,7 @@ const tags = [
   {
     name: "Brand identity",
     price: "$600",
-    rotate: 2,
+    rotate: 1.5,
     offset: "lg:mt-12",
     includes: [
       "Logo and its variations",
@@ -47,7 +47,7 @@ export function Pricing() {
             brand + website package.
           </Reveal>
         </div>
-        <div className="grid gap-10 sm:grid-cols-2 sm:gap-6 lg:col-span-8">
+        <div className="grid gap-10 sm:grid-cols-2 sm:gap-10 lg:col-span-8">
           {tags.map((tag, i) => (
             // Swing tags: they hang from the punched hole and settle with a small sway.
             <motion.article
@@ -82,6 +82,12 @@ export function Pricing() {
               </ul>
             </motion.article>
           ))}
+          <a
+            href="#contact"
+            className="inline-flex min-h-12 items-center justify-center gap-2 justify-self-start bg-signal px-6 font-semibold text-ink transition-colors hover:bg-chalk sm:col-span-2"
+          >
+            Start a project
+          </a>
         </div>
       </div>
     </section>

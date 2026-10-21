@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "oversized-h1",
+        "value": "*",
+        "files": [
+          "src/app/page.tsx"
+        ],
+        "createdAt": "2026-10-21T11:22:02.616Z",
+        "reason": "Direction contract FIRST VIEWPORT (src-app-page-tsx.md) sets the hero headline as the display thesis; 87px stays under the 6rem cap"
+      }
+    ]
+  }
+}

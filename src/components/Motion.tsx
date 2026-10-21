@@ -12,11 +12,10 @@ export function MotionShell({ children }: { children: ReactNode }) {
   const reduced = useReducedMotion();
   return (
     <MotionConfig reducedMotion="user" transition={{ duration: 0.8, ease: EASE_OUT }}>
-      {reduced ? children : (
-        <ReactLenis root options={{ lerp: 0.11, anchors: true }}>
-          {children}
-        </ReactLenis>
-      )}
+      {/* Same tree on server and client; with reduced motion Lenis keeps native scrolling. */}
+      <ReactLenis root options={{ lerp: 0.11, anchors: true, smoothWheel: !reduced }}>
+        {children}
+      </ReactLenis>
     </MotionConfig>
   );
 }

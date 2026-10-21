@@ -11,7 +11,7 @@ const LINKEDIN = "https://www.linkedin.com/in/belfa-muhammad-ravi-firmansyah-103
 type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
 
 const field =
-  "mt-2 block w-full border border-ink/25 bg-white/60 px-3 py-3 text-base text-ink placeholder:text-ink-soft/70 focus:border-ink focus:outline-none focus-visible:outline-3 focus-visible:outline-offset-1 focus-visible:outline-signal aria-[invalid=true]:border-[#c2341c]";
+  "mt-2 block w-full border border-ink/25 bg-white/60 px-3 py-3 text-base text-ink placeholder:text-ink-soft focus:border-ink focus:outline-none focus-visible:outline-3 focus-visible:outline-offset-1 focus-visible:outline-signal aria-[invalid=true]:border-signal-ink";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -114,7 +114,7 @@ export function Contact() {
                 </select>
               </div>
               <Field
-                label="Your current website (if you have one)"
+                label="Your current website (optional)"
                 name="website"
                 type="url"
                 placeholder="https://"

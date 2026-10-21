@@ -14,7 +14,7 @@ const steps = [
   },
   {
     title: "Build",
-    text: "I build the site section by section, so you see real progress instead of waiting for a big reveal.",
+    text: "I build the site section by section, so you can see and comment on each part as it's done.",
   },
   {
     title: "Launch",
@@ -40,7 +40,7 @@ export function Process() {
           </Reveal>
         </div>
         {/* One sheet of card stock on the desk; the numbers carry the order of work. */}
-        <ol className="relative bg-card p-6 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] sm:p-10 lg:col-span-8 lg:-rotate-1">
+        <ol className="relative bg-card p-6 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] sm:p-10 lg:col-span-8">
           <span aria-hidden className="absolute -top-3 left-10 h-6 w-24 rotate-3 bg-signal/90" />
           {steps.map((step, i) => (
             <motion.li
@@ -48,14 +48,14 @@ export function Process() {
               initial="hidden"
               whileInView="shown"
               viewport={{ once: true, margin: "0px 0px -25% 0px" }}
-              className="grid grid-cols-[3rem_1fr] gap-x-4 border-ink/15 py-6 first:pt-2 last:pb-2 [&:not(:last-child)]:border-b sm:grid-cols-[4.5rem_1fr] lg:min-h-[11rem]"
+              className="grid grid-cols-[3rem_1fr] gap-x-4 border-ink/15 py-6 first:pt-2 last:pb-2 [&:not(:last-child)]:border-b sm:grid-cols-[4.5rem_1fr]"
             >
               {/* the number lands like a rubber stamp */}
               <motion.span
                 aria-hidden
                 variants={{ hidden: { scale: 1.6, opacity: 0, rotate: -10 }, shown: { scale: 1, opacity: 1, rotate: 0 } }}
                 transition={{ type: "spring", stiffness: 420, damping: 22 }}
-                className="display block text-5xl text-signal sm:text-6xl"
+                className="display block text-5xl text-signal-ink sm:text-6xl"
               >
                 {i + 1}
               </motion.span>

@@ -16,7 +16,7 @@ export const projects: Project[] = [
     kind: "Personal training studio",
     place: "Lisbon, Portugal",
     goal: "Turn Instagram followers into paying clients.",
-    audience: "Busy professionals who want a coach, not another gym.",
+    audience: "Busy professionals who want one-to-one coaching.",
     action: "Book a free intro session.",
     scope: "Logo + website",
   },

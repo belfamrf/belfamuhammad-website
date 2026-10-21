@@ -47,10 +47,8 @@ export function About() {
             </p>
             <p>
               That work taught me why people book, buy or walk away. So every website I design
-              starts with your customer and the one thing you want them to do. The look comes
-              after, and it has a job.
+              starts with your customer and the one thing you want them to do.
             </p>
-            <p className="text-chalk-soft">Based in Indonesia, working with clients worldwide.</p>
           </Reveal>
         </div>
       </div>

@@ -13,6 +13,8 @@ const scatter = [
 ];
 
 const CARD_WIDTH = 272;
+// Height of the wide desk (34rem).
+const DESK_HEIGHT = 544;
 // Desk width at which cards show at full size.
 const FULL_DESK = 740;
 
@@ -52,7 +54,12 @@ const ids = projects.map((_, i) => i);
 export function Desk() {
   const wide = useIsWide();
   const [deskRef, deskWidth] = useWidth<HTMLDivElement>();
-  const scale = wide && deskWidth ? Math.min(1, Math.max(0.75, deskWidth / FULL_DESK)) : 1;
+  // The wide desk scales with its width; the pile shrinks a little in narrow columns (tablet).
+  const scale = !deskWidth
+    ? 1
+    : wide
+      ? Math.min(1, Math.max(0.75, deskWidth / FULL_DESK))
+      : Math.min(1, deskWidth / 310);
   const room = Math.max(0, deskWidth / 2 - (CARD_WIDTH * scale) / 2);
   // order[0] is the card on top of the pile. Until someone moves a card, the wide desk puts
   // the rightmost card on top so every title (set flush left) stays readable.
@@ -65,9 +72,12 @@ export function Desk() {
   const suppressClick = useRef(false);
 
   // The cards drop onto the desk once, one after another, when the page opens.
+  // With reduced motion the cards go straight to the desk, without the fall.
   const [drop, setDrop] = useState<"held" | "falling" | "rest">("held");
   useEffect(() => {
-    const frame = requestAnimationFrame(() => setDrop("falling"));
+    const frame = requestAnimationFrame(() =>
+      setDrop(window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "rest" : "falling"),
+    );
     const settle = setTimeout(() => setDrop("rest"), 1600);
     return () => {
       cancelAnimationFrame(frame);
@@ -107,11 +117,21 @@ export function Desk() {
     if (!current.moved && Math.hypot(dx, dy) < 5) return;
     current.moved = true;
     setDragging(current.index);
-    setOffsets((prev) =>
-      prev.map((value, i) =>
-        i === current.index ? { x: current.base.x + dx, y: current.base.y + dy } : value,
-      ),
-    );
+    // Keep most of the card on the desk so it can't be thrown over the headline or lost.
+    const restX = scatter[current.index].x * room;
+    const restY = scatter[current.index].y * scale;
+    const maxX = deskWidth / 2 - 60;
+    const maxY = DESK_HEIGHT / 2 - 90;
+    const x = Math.max(-maxX, Math.min(maxX, restX + current.base.x + dx)) - restX;
+    const y = Math.max(-maxY, Math.min(maxY, restY + current.base.y + dy)) - restY;
+    setOffsets((prev) => prev.map((value, i) => (i === current.index ? { x, y } : value)));
+  };
+
+  const moved = offsets.some((o) => o.x !== 0 || o.y !== 0);
+  const tidy = () => {
+    setOffsets(projects.map(() => ({ x: 0, y: 0 })));
+    setFlipped(projects.map(() => false));
+    setOrder(null);
   };
 
   const onPointerUp = () => {
@@ -166,7 +186,7 @@ export function Desk() {
               </div>
               <button
                 type="button"
-                className="absolute inset-0 cursor-pointer touch-manipulation lg:cursor-grab lg:active:cursor-grabbing"
+                className="absolute inset-0 cursor-pointer touch-manipulation lg:cursor-grab lg:touch-none lg:active:cursor-grabbing"
                 aria-label={`${project.kind}, ${project.place}. ${flipped[index] ? "Showing the brief. Flip back" : "Flip to read the brief"}`}
                 aria-pressed={flipped[index]}
                 tabIndex={wide || isTop ? 0 : -1}
@@ -192,9 +212,21 @@ export function Desk() {
         </button>
         <span>Tap a card to flip it</span>
       </div>
-      <p className="mt-6 hidden text-center text-sm text-chalk-soft lg:block">
-        Drag the cards around. Click one to flip it.
-      </p>
+      <div className="mt-4 hidden items-center justify-center gap-4 text-sm lg:flex">
+        <p className="inline-flex items-center gap-2 text-chalk">
+          <RotateCw aria-hidden size={15} strokeWidth={2.25} className="text-signal" />
+          Click a card to read the brief on the back. Drag to move it.
+        </p>
+        {moved && (
+          <button
+            type="button"
+            onClick={tidy}
+            className="inline-flex min-h-11 items-center px-2 font-semibold text-chalk-soft underline decoration-chalk-soft/50 hover:text-signal"
+          >
+            Tidy the desk
+          </button>
+        )}
+      </div>
     </div>
   );
 }
@@ -212,16 +244,15 @@ function CardFront({ project }: { project: Project }) {
   return (
     <div className="card-face flex flex-col bg-card p-4 text-ink">
       <Tape />
-      <div className="flex flex-1 flex-col justify-end bg-ink p-4 text-chalk">
-        <p className="display text-[2.25rem] break-words">{project.kind}</p>
-        <p className="mt-2 text-sm text-chalk-soft">{project.place}</p>
+      {/* Until the demo site exists, the cover carries the project's goal instead of a blank frame. */}
+      <div className="flex flex-1 flex-col justify-between bg-ink p-4 text-chalk">
+        <p className="text-sm text-chalk-soft">
+          {project.kind} · {project.place}
+        </p>
+        <p className="display text-[2.1rem] break-words">{project.goal}</p>
       </div>
       <div className="flex items-end justify-between gap-3 pt-4">
-        <p className="text-sm leading-snug text-ink-soft">
-          Concept project
-          <br />
-          In progress
-        </p>
+        <p className="text-sm leading-snug text-ink-soft">Concept · in progress</p>
         <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
           <RotateCw aria-hidden size={15} strokeWidth={2.25} />
           The brief

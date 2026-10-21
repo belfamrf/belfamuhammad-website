@@ -9,6 +9,8 @@
   --chalk: #efece6;
   --chalk-soft: #b9b4aa;
   --signal: #ff5b1f;
+  /* the signal colour, deepened so it reads as text on card stock */
+  --signal-ink: #c2341c;
 }
 
 @theme inline {
@@ -20,6 +22,7 @@
   --color-chalk: var(--chalk);
   --color-chalk-soft: var(--chalk-soft);
   --color-signal: var(--signal);
+  --color-signal-ink: var(--signal-ink);
   --font-sans: var(--font-archivo);
 }
 
@@ -49,11 +52,17 @@ a {
   text-underline-offset: 0.2em;
 }
 
+p {
+  text-wrap: pretty;
+}
+
 .display {
   font-stretch: 68%;
   font-weight: 850;
   text-transform: uppercase;
   letter-spacing: -0.01em;
+  /* condensed caps swallow word spaces; give them back */
+  word-spacing: 0.1em;
   line-height: 0.92;
   text-wrap: balance;
 }
