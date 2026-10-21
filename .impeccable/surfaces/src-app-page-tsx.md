@@ -13,7 +13,7 @@ Home page of belfamuhammad.com (one long page: intro, work, process, pricing, co
 
 THESIS: The page is a marketer's work desk. Projects lie on it as printed cards you pick up and flip, and the back of every card is the marketing brief behind the design. It refuses the category default: a centred hero over a grid of equal screenshot cards.
 
-OWN-WORLD: Charcoal desk ground (#1C1B19) with faint grain; off-white card stock (#F2F0EB) in ink (#141414); signal orange (#FF5B1F) as the only accent, used for tape strips, flip marks and the primary action. One type family, Archivo: condensed heavy caps for display, normal width for text. Cards carry real paper depth (offset, soft blur), slight rotation, tape. No glass, no gradients, no icon tiles.
+OWN-WORLD: Charcoal desk ground (#1C1B19) with faint grain; off-white card stock (#F2F0EB) in ink (#141414); signal orange (#FF5B1F) as the only accent, used for tape strips, flip marks, the primary action, and the one key word of the hero and contact headlines ("MARKETER.", "BUSINESS."; Belfa, asked on 21 Oct 2026 whether to keep the orange key word in both headlines, answered "Ya, pertahankan oranye"); on card stock it deepens to signal-ink (#C2341C), which also sets the process step numbers. One type family, Archivo: condensed heavy caps for display, normal width for text. Cards carry real paper depth (offset, soft blur), slight rotation, tape. No glass, no gradients, no icon tiles.
 
 STORY: The visitor understands Belfa is a web designer who thinks like a marketer, believes it because each card's back shows the goal, audience and desired action behind the work, and sends an enquiry.
 

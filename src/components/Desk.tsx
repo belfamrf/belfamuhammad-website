@@ -8,7 +8,7 @@ import { projects, type Project } from "@/content/projects";
 // of centre, so the spread follows the desk's width; y is in pixels.
 const scatter = [
   { x: -1, y: -30, r: -7 },
-  { x: 0.04, y: 70, r: 4 },
+  { x: 0.16, y: 80, r: 4 },
   { x: 1, y: -45, r: -2 },
 ];
 
@@ -246,24 +246,28 @@ function CardFront({ project }: { project: Project }) {
       <Tape />
       {/* Until the demo site exists, the cover carries the project's goal instead of a blank frame. */}
       <div className="flex flex-1 flex-col justify-between bg-ink p-4 text-chalk">
-        <p className="text-sm text-chalk-soft">
-          {project.kind} · {project.place}
+        {/* Short lines: the right edge of a cover can sit under the neighbouring card. */}
+        <p className="text-sm leading-snug text-chalk-soft">
+          Concept project
+          <br />
+          In progress
+          <br />
+          {project.kind}
         </p>
         <p className="display text-[2.1rem] break-words">{project.goal}</p>
       </div>
-      <div className="flex items-end justify-between gap-3 pt-4">
-        <p className="text-sm leading-snug text-ink-soft">Concept · in progress</p>
-        <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
-          <RotateCw aria-hidden size={15} strokeWidth={2.25} />
-          The brief
-        </p>
-      </div>
+      {/* Flush left: on the wide desk the right edge of a card can sit under its neighbour. */}
+      <p className="inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-signal-ink">
+        <RotateCw aria-hidden size={15} strokeWidth={2.25} />
+        Flip for the brief
+      </p>
     </div>
   );
 }
 
 function CardBack({ project }: { project: Project }) {
   const rows = [
+    ["Where", project.place],
     ["Goal", project.goal],
     ["For", project.audience],
     ["Action", project.action],
@@ -281,7 +285,7 @@ function CardBack({ project }: { project: Project }) {
           </div>
         ))}
       </dl>
-      <p className="inline-flex items-center gap-1.5 self-end text-sm font-semibold">
+      <p className="inline-flex items-center gap-1.5 self-end text-sm font-semibold text-signal-ink">
         <RotateCw aria-hidden size={15} strokeWidth={2.25} />
         Flip back
       </p>

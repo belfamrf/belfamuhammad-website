@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Reveal } from "@/components/Motion";
 
 const tags = [
   {
@@ -53,26 +52,23 @@ export function Pricing() {
     >
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-4">
-          <Reveal as="h2" className="display text-[clamp(2.75rem,10vw,4.5rem)] text-chalk">
-            <span id="pricing-title">Clear prices, up front</span>
-          </Reveal>
-          <Reveal as="p" delay={0.1} className="mt-5 max-w-[36ch] text-lg leading-relaxed text-chalk-soft">
+          <h2 id="pricing-title" className="display text-[clamp(2.75rem,10vw,4.5rem)] text-chalk">
+            Clear prices, up front
+          </h2>
+          <p className="mt-5 max-w-[36ch] text-lg leading-relaxed text-chalk-soft">
             Starting prices, so you know where you stand before we talk. Need both? Ask about a
             brand + website package.
-          </Reveal>
+          </p>
         </div>
         <div className="grid gap-10 sm:grid-cols-2 sm:gap-10 lg:col-span-8">
           {tags.map((tag, i) => (
             // Swing tags: they hang from the punched hole and settle with a small sway.
             <motion.article
               key={tag.name}
-              initial={{ rotate: tag.rotate * 7, y: -24, opacity: 0 }}
-              whileInView={{ rotate: tag.rotate, y: 0, opacity: 1 }}
+              initial={{ rotate: tag.rotate * 7 }}
+              whileInView={{ rotate: tag.rotate }}
               viewport={{ once: true, margin: "0px 0px -15% 0px" }}
-              transition={{
-                rotate: { type: "spring", stiffness: 90, damping: 7, delay: i * 0.15 },
-                default: { duration: 0.6, delay: i * 0.15 },
-              }}
+              transition={{ type: "spring", stiffness: 90, damping: 7, delay: i * 0.15 }}
               style={{ transformOrigin: "50% 1.5rem" }}
               className={`relative bg-card px-6 pb-8 pt-12 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] ${tag.offset}`}
             >
@@ -89,7 +85,7 @@ export function Pricing() {
               <ul className="mt-6 space-y-2.5 border-t border-ink/15 pt-6 leading-snug">
                 {tag.includes.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span aria-hidden className="mt-2 h-0.5 w-3 shrink-0 bg-signal" />
+                    <span aria-hidden className="mt-2 h-0.5 w-3 shrink-0 bg-ink/40" />
                     {item}
                   </li>
                 ))}
@@ -97,7 +93,7 @@ export function Pricing() {
             </motion.article>
           ))}
           {/* AI is offered inside the website work, not as a separate service. */}
-          <Reveal className="sm:col-span-2">
+          <div className="sm:col-span-2">
             <div className="relative bg-card px-6 py-7 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] sm:px-8">
               <span aria-hidden className="absolute -top-3 right-10 h-6 w-24 -rotate-2 bg-signal/90" />
               <h3 className="text-lg font-semibold">AI built in, if you want it</h3>
@@ -105,24 +101,22 @@ export function Pricing() {
               <ul className="mt-5 grid gap-x-8 gap-y-2.5 leading-snug sm:grid-cols-2">
                 {aiExtras.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span aria-hidden className="mt-2 h-0.5 w-3 shrink-0 bg-signal" />
+                    <span aria-hidden className="mt-2 h-0.5 w-3 shrink-0 bg-ink/40" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-          </Reveal>
+          </div>
           {/* The answers a buyer weighs before they risk a deposit. */}
-          <Reveal className="sm:col-span-2">
-            <dl className="grid gap-x-10 gap-y-5 border-t border-chalk-soft/25 pt-8 sm:grid-cols-2">
-              {terms.map(([label, text]) => (
-                <div key={label}>
-                  <dt className="text-sm font-semibold uppercase tracking-wider text-signal">{label}</dt>
-                  <dd className="mt-1 leading-relaxed text-chalk">{text}</dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
+          <dl className="grid gap-x-10 gap-y-5 border-t border-chalk-soft/25 pt-8 sm:col-span-2 sm:grid-cols-2">
+            {terms.map(([label, text]) => (
+              <div key={label}>
+                <dt className="font-semibold text-chalk">{label}</dt>
+                <dd className="mt-1 leading-relaxed text-chalk-soft">{text}</dd>
+              </div>
+            ))}
+          </dl>
           <a
             href="#contact"
             className="inline-flex min-h-12 items-center justify-center gap-2 justify-self-start bg-signal px-6 font-semibold text-ink transition-colors hover:bg-chalk sm:col-span-2"

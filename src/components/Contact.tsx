@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, ArrowUpRight, LoaderCircle } from "lucide-react";
-import { Reveal } from "@/components/Motion";
+import { ArrowRight, ArrowUpRight, ChevronDown, LoaderCircle } from "lucide-react";
 
 // Form service endpoint (e.g. Formspree), set in .env.local. Never hard-coded.
 const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
@@ -11,7 +10,7 @@ const LINKEDIN = "https://www.linkedin.com/in/belfa-muhammad-ravi-firmansyah-103
 type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
 
 const field =
-  "mt-2 block w-full border border-ink/25 bg-white/60 px-3 py-3 text-base text-ink placeholder:text-ink-soft focus:border-ink focus:outline-none focus-visible:outline-3 focus-visible:outline-offset-1 focus-visible:outline-signal aria-[invalid=true]:border-signal-ink";
+  "mt-2 block w-full border border-ink/25 bg-white/60 px-3 py-3 text-base text-ink caret-signal-ink placeholder:text-ink-soft focus:border-ink focus:outline-none focus-visible:outline-3 focus-visible:outline-offset-1 focus-visible:outline-signal aria-[invalid=true]:border-signal-ink";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -63,11 +62,9 @@ export function Contact() {
     >
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
-          <Reveal as="h2" className="display text-[clamp(3rem,11vw,5.5rem)] text-chalk">
-            <span id="contact-title">
-              Tell me about your <span className="text-signal">business.</span>
-            </span>
-          </Reveal>
+          <h2 id="contact-title" className="display text-[clamp(3rem,11vw,5.5rem)] text-chalk">
+            Tell me about your <span className="text-signal">business.</span>
+          </h2>
           <p className="mt-6 max-w-[38ch] text-lg leading-relaxed text-chalk">
             Who your customers are, what you sell, and what you want your website to do. I reply
             within two working days.
@@ -106,12 +103,25 @@ export function Contact() {
                 <label htmlFor="need" className="text-sm font-semibold">
                   What do you need?
                 </label>
-                <select id="need" name="need" className={field} defaultValue="Website">
-                  <option>Website</option>
-                  <option>Brand identity</option>
-                  <option>Brand identity + website</option>
-                  <option>Not sure yet</option>
-                </select>
+                <div className="relative">
+                  <select
+                    id="need"
+                    name="need"
+                    className={`${field} appearance-none pr-10`}
+                    defaultValue="Website"
+                  >
+                    <option>Website</option>
+                    <option>Brand identity</option>
+                    <option>Brand identity + website</option>
+                    <option>Not sure yet</option>
+                  </select>
+                  <ChevronDown
+                    aria-hidden
+                    size={18}
+                    strokeWidth={2.25}
+                    className="pointer-events-none absolute right-3 top-1/2 mt-1 -translate-y-1/2 text-ink"
+                  />
+                </div>
               </div>
               <Field
                 label="Your current website (optional)"
@@ -130,7 +140,7 @@ export function Contact() {
                   rows={5}
                   aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? "message-error" : undefined}
-                  className={field}
+                  className={`${field} resize-none`}
                 />
                 {errors.message && <ErrorText id="message-error">{errors.message}</ErrorText>}
               </div>

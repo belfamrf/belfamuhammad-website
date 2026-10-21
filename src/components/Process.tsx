@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Reveal } from "@/components/Motion";
 
 const steps = [
   {
@@ -32,12 +31,12 @@ export function Process() {
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
         {/* On wide screens the heading holds still while the steps scroll past it. */}
         <div className="lg:sticky lg:top-24 lg:col-span-4 lg:self-start">
-          <Reveal as="h2" className="display text-[clamp(2.75rem,10vw,4.5rem)] text-chalk">
-            <span id="process-title">How a project runs</span>
-          </Reveal>
-          <Reveal as="p" delay={0.1} className="mt-5 max-w-[36ch] text-lg leading-relaxed text-chalk-soft">
+          <h2 id="process-title" className="display text-[clamp(2.75rem,10vw,4.5rem)] text-chalk">
+            How a project runs
+          </h2>
+          <p className="mt-5 max-w-[36ch] text-lg leading-relaxed text-chalk-soft">
             Four steps, the same way every time. You always know what happens next.
-          </Reveal>
+          </p>
         </div>
         {/* One sheet of card stock on the desk; the numbers carry the order of work. */}
         <ol className="relative bg-card p-6 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] sm:p-10 lg:col-span-8">
@@ -50,22 +49,19 @@ export function Process() {
               viewport={{ once: true, margin: "0px 0px -25% 0px" }}
               className="grid grid-cols-[3rem_1fr] gap-x-4 border-ink/15 py-6 first:pt-2 last:pb-2 [&:not(:last-child)]:border-b sm:grid-cols-[4.5rem_1fr]"
             >
-              {/* the number lands like a rubber stamp */}
+              {/* the number lands like a rubber stamp; it is visible before and after */}
               <motion.span
                 aria-hidden
-                variants={{ hidden: { scale: 1.6, opacity: 0, rotate: -10 }, shown: { scale: 1, opacity: 1, rotate: 0 } }}
+                variants={{ hidden: { scale: 1.6, rotate: -10 }, shown: { scale: 1, rotate: 0 } }}
                 transition={{ type: "spring", stiffness: 420, damping: 22 }}
                 className="display block text-5xl text-signal-ink sm:text-6xl"
               >
                 {i + 1}
               </motion.span>
-              <motion.div
-                variants={{ hidden: { opacity: 0, x: 18 }, shown: { opacity: 1, x: 0 } }}
-                transition={{ delay: 0.12 }}
-              >
+              <div>
                 <h3 className="display text-3xl sm:text-4xl">{step.title}</h3>
                 <p className="mt-2 max-w-[56ch] leading-relaxed text-ink-soft">{step.text}</p>
-              </motion.div>
+              </div>
             </motion.li>
           ))}
         </ol>
