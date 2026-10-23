@@ -44,4 +44,7 @@ next-env.d.ts
 .playwright-cli/
 .impeccable/review/
 
+# private working files (photos before upload)
+/_foto-kerja/
+
 !.env.example
