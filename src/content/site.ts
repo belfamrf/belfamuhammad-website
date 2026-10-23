@@ -1,6 +1,7 @@
 // The site's public address and the facts search engines read about Belfa.
 export const SITE_URL = "https://www.belfamuhammad.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/belfa-muhammad-ravi-firmansyah-103387225/";
+export const UPWORK_URL = "https://www.upwork.com/freelancers/~018f4916397aa91ff6";
 
 export const SITE_TITLE = "Belfa Muhammad · Premium websites, designed by a marketer";
 export const SITE_DESCRIPTION =
@@ -33,7 +34,7 @@ export const structuredData = {
       jobTitle: "Web designer",
       url: SITE_URL,
       image: `${SITE_URL}/belfa.jpg`,
-      sameAs: [LINKEDIN_URL],
+      sameAs: [LINKEDIN_URL, UPWORK_URL],
       hasCredential: certifications.map((cert) => ({
         "@type": "EducationalOccupationalCredential",
         name: cert.name,

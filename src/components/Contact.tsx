@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { ArrowRight, ArrowUpRight, ChevronDown, LoaderCircle } from "lucide-react";
+import { LINKEDIN_URL, UPWORK_URL } from "@/content/site";
 
 // Form service endpoint (e.g. Formspree), set in .env.local. Never hard-coded.
 const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
-const LINKEDIN = "https://www.linkedin.com/in/belfa-muhammad-ravi-firmansyah-103387225/";
 
 type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
 
@@ -69,15 +69,26 @@ export function Contact() {
             Who your customers are, what you sell, and what you want your website to do. I reply
             within two working days.
           </p>
-          <a
-            href={LINKEDIN}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex min-h-11 items-center gap-2 font-semibold text-chalk underline decoration-chalk-soft/50 hover:text-signal hover:decoration-signal"
-          >
-            Or find me on LinkedIn
-            <ArrowUpRight aria-hidden size={18} strokeWidth={2} />
-          </a>
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-1">
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-2 font-semibold text-chalk underline decoration-chalk-soft/50 hover:text-signal hover:decoration-signal"
+            >
+              Or find me on LinkedIn
+              <ArrowUpRight aria-hidden size={18} strokeWidth={2} />
+            </a>
+            <a
+              href={UPWORK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-2 font-semibold text-chalk underline decoration-chalk-soft/50 hover:text-signal hover:decoration-signal"
+            >
+              Hire me on Upwork
+              <ArrowUpRight aria-hidden size={18} strokeWidth={2} />
+            </a>
+          </div>
         </div>
 
         <div className="relative bg-card p-6 text-ink shadow-[0_2px_3px_rgb(0_0_0/0.35),0_24px_40px_-12px_rgb(0_0_0/0.55)] sm:p-10 lg:col-span-7">
@@ -167,7 +178,7 @@ export function Contact() {
                 </button>
                 <p role="status" aria-live="polite" className="text-sm text-ink-soft">
                   {status === "error" &&
-                    "The message didn't go through. Please try again, or reach me on LinkedIn."}
+                    "The message didn't go through. Please try again, or reach me on LinkedIn or Upwork."}
                   {status === "unconfigured" &&
                     "The form isn't connected yet. Please reach me on LinkedIn for now."}
                 </p>
