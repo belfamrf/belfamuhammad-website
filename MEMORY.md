@@ -2,6 +2,20 @@
 
 Diperbarui: 15 November 2026. Isinya keadaan folder ini saat ini, supaya sesi berikutnya tidak mengulang pekerjaan.
 
+## Pembaruan terakhir - 15 November 2026 (studi kasus Sawah House, demo 3)
+
+- **Demo 3 live di domain asli:** `https://villa.belfamuhammad.com` (repo `belfamrf/sawah-house`, project Vercel `sawah-house`). CNAME `villa` -> `ed011aff1c249a44.vercel-dns-017.com` sudah aktif, `vercel domains verify` mengembalikan `verified: true`. Sertifikat belum terbit saat pertama dicek (HTTPS gagal handshake); **redeploy produksi memicunya** dan `vercel certs ls` kemudian menampilkan `villa.belfamuhammad.com`, Let's Encrypt, berlaku sampai 13 Februari 2027.
+- **Kartu villa di meja kini terhubung:** `src/content/projects.ts` mendapat `name: "Sawah House"`, `live`, dan `caseHref: "/work/villa"`. Ketiga kartu sekarang "Live"; tidak ada lagi label "In progress", dan tiga tombol studi kasus muncul di bawah meja.
+- **Halaman studi kasus `/work/villa`** (`src/app/work/villa/page.tsx`): hero 1440 (foto sawah + blok hijau berisi judul), panel 06.00 di 1440, panel yang sama di 375, brief, masalah (tidak ada foto rumah yang berlisensi), enam keputusan desain, dan "What testing changed" yang mencatat dua perubahan nyata: aksen kuningan diukur 4,6:1 sehingga tidak dipakai untuk teks kecil, dan reveal dipindah dari scroll ke IntersectionObserver karena gagal di iOS Safari. Tiga gambar di `public/work/villa/` (2880x1800 dua, 750x1624 satu), cocok dengan `width`/`height` di kode.
+- **Tangkapan layar** diambil dengan `scripts/capture-work.mjs` yang baru ada di repo `03-hospitality`. Puppeteer menulis PNG ke folder temp lalu `sharp` mengompres ke mozjpeg q72 (hero turun dari 757 KB ke 489 KB); menulis langsung ke berkas tujuan gagal karena Chrome masih memegang handle-nya, jadi dipakai rename.
+- **Kartu share** `src/app/work/villa/opengraph-image.tsx`: 1200x630, Archivo, charcoal + oranye, "THE PLACE FIRST, THE HOUSE IN WORDS." Dicek sampai ukuran piksel dan bukan bidang kosong (stdev 53).
+- **Sitemap** kini empat URL (`/`, `/work/kern`, `/work/renovation`, `/work/villa`).
+- **Verifikasi:** `npm run lint` dan `npm run build` lolos; `/work/villa` di-prerender. Uji `next start` lokal dan live: `/work/villa` 200, canonical `/work/villa`, `og:image` 1200x630, tiga JPEG 200, kartu beranda memuat "Read the Sawah House case study" -> `/work/villa`.
+- **Lighthouse `/work/villa` (live):** mobile **100 / 100 / 100 / 100** (LCP 1,0 s, CLS 0, TBT 30 ms; hero 489 KB dikirim sebagai 54 KB WebP), desktop **98 / 100 / 100 / 100** (LCP 1,1 s).
+- **Lighthouse demo villa (live, domain asli):** mobile **95** dan **97** di dua run (LCP 2,2-2,5 s, CLS 0, total 536 KiB), desktop **98**. Speed Index run pertama 5,1 s lalu 0,9 s: variasi pemuatan foto panel yang lazy, bukan regresi.
+- **Commit:** `542e9d1` (halaman studi kasus + kartu + sitemap + gambar) di repo ini, `eb7cfdb` (skrip tangkapan layar + catatan) di repo `03-hospitality`. Keduanya sudah di-push dan live.
+- **Belum:** review visual halaman dan tiga tangkapan layar oleh pemilik (model sesi ini text-only).
+
 ## Pembaruan terakhir â€” 15 November 2026 (kartu wellness + studi kasus KERN)
 
 - **Kartu wellness di meja sudah diperbaiki.** Isinya kini **Copenhagen, Denmark** (bukan Lisbon, Portugal), tujuan dan audiensnya disamakan dengan brief KERN, status berubah dari "In progress" menjadi **"Live"**, dan di bawah meja ada tombol "Read the KERN case study". Datanya di `src/content/projects.ts` (field baru `live` dan `caseHref`); label status di `src/components/Desk.tsx`. Kartu kontraktor dan villa tetap "In progress".
@@ -32,8 +46,8 @@ Diperbarui: 15 November 2026. Isinya keadaan folder ini saat ini, supaya sesi be
 |---|---|---|
 | `00-website-pribadi` | Website portofolio Belfa (Next.js) | **Selesai dan online** |
 | `01-wellness` | Proyek demo 1 (personal training, dengan logo) | **Live di https://kern.belfamuhammad.com**, kartu dan studi kasus sudah terhubung |
-| `02-jasa-lokal` | Proyek demo 2 (kontraktor/klinik) | **Kosong**, belum ada git |
-| `03-hospitality` | Proyek demo 3 (villa/restoran) | **Kosong**, belum ada git |
+| `02-jasa-lokal` | Proyek demo 2 (kontraktor renovasi) | **Live di https://renovation.belfamuhammad.com**, kartu dan studi kasus sudah terhubung |
+| `03-hospitality` | Proyek demo 3 (villa, Sawah House) | **Live di https://villa.belfamuhammad.com**, kartu dan studi kasus sudah terhubung |
 | `_referensi` | Analisis referensi desain + teks profil Upwork | Selesai, siap dipakai |
 
 ## 00-website-pribadi (website utama)
@@ -72,19 +86,18 @@ Diperbarui: 15 November 2026. Isinya keadaan folder ini saat ini, supaya sesi be
 
 ## Yang belum selesai
 
-1. **Satu dari tiga proyek demo belum dibangun.** KERN (`/work/kern`) dan Kelso & Reid (`/work/renovation`) sudah live dan kartunya bisa diklik; sisa villa di `03-hospitality`.
-2. **Profil Upwork:** teks dan foto profil sudah diterapkan, link sudah ada di website. Verifikasi identitas **ditunda** sampai tiga proyek demo selesai (keputusan 23 Oktober 2026). Upwork meminta **35 Connects**, saldo Belfa **0**; beli Connects hanya lewat Upwork sendiri. Badge berlaku 3 tahun.
-3. **Halaman studi kasus** sudah ada dua (`/work/kern`, `/work/renovation`); satu lagi menyusul setelah demo 3 dibangun.
+1. **Ketiga proyek demo sudah dibangun dan live.** KERN (`/work/kern`), Kelso & Reid (`/work/renovation`), dan Sawah House (`/work/villa`); ketiga kartu bisa diklik dan ketiga tombol studi kasus muncul di bawah meja.
+2. **Profil Upwork:** teks dan foto profil sudah diterapkan, link sudah ada di website. Verifikasi identitas **ditunda** sampai tiga proyek demo selesai (keputusan 23 Oktober 2026) dan sekarang syaratnya sudah terpenuhi. Upwork meminta **35 Connects**, saldo Belfa **0**; beli Connects hanya lewat Upwork sendiri. Badge berlaku 3 tahun.
+3. **Halaman studi kasus** sudah ada tiga (`/work/kern`, `/work/renovation`, `/work/villa`), semuanya masuk sitemap.
 4. **`inject.py` di akar folder** bukan bagian portofolio: skrip installer OpenAgentic yang mengubah settings Claude Code di luar folder ini. Jangan dijalankan; sebaiknya dipindah atau dihapus setelah minta izin.
 
 ## Langkah berikutnya (urutan rekomendasi)
 
-1. **02-jasa-lokal**, lalu **03-hospitality** â€” pola yang sama seperti KERN: repo + Vercel sendiri, lalu satu halaman studi kasus di repo ini plus kartu yang dihubungkan.
-2. Setelah tiga demo selesai: beli Connects dan verifikasi identitas Upwork, unggah 3 item portfolio (butuh screenshot tiap demo).
-3. Perbarui `CASE-STUDY.md` dan ulangi Lighthouse tiap kali halaman baru masuk.
-4. Review visual `/work/kern` (375 dan 1440) oleh mata atau model vision; sesi pembuatnya text-only.
-5. Cek Google Analytics realtime sekali.
-6. Ganti foto/teks mana pun yang berubah, lalu commit dan push tiap bagian besar.
+1. Review visual tiga halaman studi kasus dan tiga tangkapan layar `/work/villa` (375 dan 1440); semua sesi pembuatnya text-only.
+2. Karena tiga demo selesai: beli Connects dan verifikasi identitas Upwork, unggah 3 item portfolio (butuh screenshot tiap demo).
+3. Perbarui `CASE-STUDY.md` kalau ada halaman baru lagi, dan ulangi Lighthouse tiap kali halaman berubah.
+4. Cek Google Analytics realtime sekali.
+5. Ganti foto/teks mana pun yang berubah, lalu commit dan push tiap bagian besar.
 
 ## Perintah harian
 
