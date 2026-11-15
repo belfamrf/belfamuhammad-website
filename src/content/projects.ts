@@ -42,11 +42,14 @@ export const projects: Project[] = [
   },
   {
     slug: "villa",
+    name: "Sawah House",
     kind: "Private villa",
     place: "Bali, Indonesia",
     goal: "More direct bookings, fewer platform commissions.",
     audience: "Couples and families planning a trip to Bali.",
     action: "Check dates and book direct.",
     scope: "Website",
+    live: "https://villa.belfamuhammad.com",
+    caseHref: "/work/villa",
   },
 ];
