@@ -30,12 +30,15 @@ export const projects: Project[] = [
   },
   {
     slug: "contractor",
+    name: "Kelso & Reid",
     kind: "Renovation contractor",
     place: "Melbourne, Australia",
     goal: "Win bigger renovation jobs.",
     audience: "Homeowners comparing three quotes before they commit.",
     action: "Request a site visit.",
     scope: "Website",
+    live: "https://renovation.belfamuhammad.com",
+    caseHref: "/work/renovation",
   },
   {
     slug: "villa",
