@@ -157,7 +157,7 @@ export default function KernCaseStudy() {
               height={1800}
               sizes="(min-width: 1280px) 1216px, 100vw"
               className="h-auto w-full"
-              priority
+              preload
             />
             <figcaption className="mt-3 px-1 text-xs text-ink-soft">
               The live homepage. Photography from Wikimedia Commons, credited on its
