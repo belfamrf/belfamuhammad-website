@@ -12,7 +12,7 @@ I needed a site that wins remote clients, mostly small-business owners comparing
 
 **A desk to work on.** I collected about twenty reference sites and noticed what I kept coming back to: work shown as physical objects you can pick up, one memorable interaction, dark and confident pages. That became the direction: a marketer's work desk. Projects sit on the desk as printed cards. Each card's back is the marketing brief behind the work: the goal, who it is for, and the action the site should get.
 
-**Honest proof.** My demo projects are fictional businesses, so every card says "Concept · in progress" and shows the project's goal instead of an empty frame. There are no invented testimonials, logos or numbers. Prices, timeline, revisions, payment terms and ownership sit in plain view, because those are the questions a buyer asks before paying a deposit.
+**Honest proof.** My demo projects are fictional businesses, so every card says "Concept project", marks whether the build is live or still in progress, and shows the project's goal instead of an empty frame. There are no invented testimonials, logos or numbers. Prices, timeline, revisions, payment terms and ownership sit in plain view, because those are the questions a buyer asks before paying a deposit.
 
 ## Design decisions
 

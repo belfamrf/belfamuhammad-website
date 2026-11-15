@@ -2,23 +2,31 @@
 // so every card is labelled "Concept project".
 export type Project = {
   slug: string;
+  name?: string;
   kind: string;
   place: string;
   goal: string;
   audience: string;
   action: string;
   scope: string;
+  /** Public address of the built demo, once it is live. */
+  live?: string;
+  /** Case study page on this site. */
+  caseHref?: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "wellness",
+    name: "KERN",
     kind: "Personal training studio",
-    place: "Lisbon, Portugal",
-    goal: "Turn Instagram followers into paying clients.",
-    audience: "Busy professionals who want one-to-one coaching.",
+    place: "Copenhagen, Denmark",
+    goal: "Turn a quiet studio into a full intro calendar.",
+    audience: "Busy professionals, 30 to 50, who want to get stronger without a crowded gym.",
     action: "Book a free intro session.",
-    scope: "Logo + website",
+    scope: "Brand identity, logo, website",
+    live: "https://kern.belfamuhammad.com",
+    caseHref: "/work/kern",
   },
   {
     slug: "contractor",

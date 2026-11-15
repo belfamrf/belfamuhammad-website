@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { RotateCw, Shuffle } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, RotateCw, Shuffle } from "lucide-react";
 import { projects, type Project } from "@/content/projects";
 
 // Where each card rests on a wide desk. x is a share of the room left and right
@@ -227,6 +228,22 @@ export function Desk() {
           </button>
         )}
       </div>
+      {projects.some((project) => project.caseHref) && (
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm">
+          {projects
+            .filter((project) => project.caseHref)
+            .map((project) => (
+              <Link
+                key={project.slug}
+                href={project.caseHref!}
+                className="inline-flex min-h-11 items-center gap-1.5 border border-signal/60 px-3 font-semibold text-chalk transition-colors hover:bg-signal hover:text-ink"
+              >
+                Read the {project.name ?? project.kind} case study
+                <ArrowUpRight aria-hidden size={16} strokeWidth={2.25} />
+              </Link>
+            ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -250,7 +267,7 @@ function CardFront({ project }: { project: Project }) {
         <p className="text-sm leading-snug text-chalk-soft">
           Concept project
           <br />
-          In progress
+          {project.live ? "Live" : "In progress"}
           <br />
           {project.kind}
         </p>
