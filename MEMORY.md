@@ -11,6 +11,7 @@ Diperbarui: 15 November 2026. Isinya keadaan folder ini saat ini, supaya sesi be
 - **Verifikasi:** `npm run lint` dan `npm run build` lolos; `/work/kern` di-prerender. Uji `next start` lokal: `/work/kern` 200, `og:image` dan `twitter:image` menunjuk PNG 1200×630 (dicek sampai ukuran piksel), kartu beranda tidak berubah, gambar kartu berisi 417 warna (bukan bidang kosong).
 - **Commit:** `1a347c3` (kartu + halaman studi kasus + sitemap + docs) dan `72fa6ee` (kartu share 1200×630 + `MEMORY.md` + `CLAUDE.md`). `CLAUDE.md` dan `MEMORY.md` akhirnya ikut di-commit, sama seperti di repo `01-wellness`.
 - **Belum:** review visual `/work/kern` oleh mata atau model vision (model sesi ini text-only), dan Lighthouse khusus halaman itu di live.
+- **BLOCKER domain (bukan tugas coding):** sejak sekitar 5 November 2026 `belfamuhammad.com` didelegasikan ke **NS1/NS2.NONVERIFIEDDOMAIN.COM** yang **NXDOMAIN**, sehingga seluruh zona gagal (SERVFAIL di Google dan Cloudflare DNS). Akibatnya `www.belfamuhammad.com` dan `kern.belfamuhammad.com` **tidak bisa dibuka pengunjung**, termasuk seluruh portfolio dan tiga link di Upwork. Deployment Vercel-nya sendiri READY dan alias `www.belfamuhammad.com` sudah terpasang; yang rusak hanya DNS. Perbaiki di akun registrar (Domainesia): verifikasi kontak/email, cek status domain (RDAP: registrasi 21 Oktober 2026, last changed 5 November 2026), lalu kembalikan nameserver. Sementara itu situs bisa dicek lewat `belfamuhammad-website.vercel.app`.
 
 ## Status per folder
 
