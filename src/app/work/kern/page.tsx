@@ -19,20 +19,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: TITLE,
     description: DESCRIPTION,
-    images: [
-      {
-        url: "/work/kern/hero-1440.jpg",
-        width: 2880,
-        height: 1800,
-        alt: "The KERN homepage at 1440px: a bone page with the headline “Strength, measured.” beside a dark photograph of gymnastic rings.",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/work/kern/hero-1440.jpg"],
   },
 };
 

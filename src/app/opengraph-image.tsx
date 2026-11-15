@@ -1,24 +1,9 @@
 import { ImageResponse } from "next/og";
+import { loadDisplayFont } from "@/lib/og-font";
 
 export const alt = "Belfa Muhammad: premium websites, designed by a marketer.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-
-// Archivo condensed heavy, matching the site's display type. Falls back to the
-// default face if Google Fonts can't be reached at build time.
-async function loadDisplayFont() {
-  try {
-    // The width has to be asked for as a range; the first face served is the narrowest.
-    const css = await fetch(
-      "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,800",
-    ).then((res) => res.text());
-    const url = css.match(/src: url\((.+?)\) format\('(opentype|truetype)'\)/)?.[1];
-    if (!url) return null;
-    return await fetch(url).then((res) => res.arrayBuffer());
-  } catch {
-    return null;
-  }
-}
 
 export default async function Image() {
   const font = await loadDisplayFont();
